@@ -1,0 +1,54 @@
+{% extends 'twt/base.html' %}
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+{% block twt %}
+
+<div class="tweety">
+        <div class="zagolovok">
+            <h1>{{ title }}</h1> </div>
+
+        <div class="content">
+            <div class="post">
+                {% for a in object_list %}
+                <a class="posts" href="{{ a.get_absolute_url }}"><H1>{{a.title}}</H1>
+                    <div  class="posts-text"><p1>{{a.text}}</p1></div>
+                {% if a.img %}
+                <img src="{{a.img.url}}" width="700" height="350">
+                {% else %}
+                <p></p>
+                {% endif %}
+                <p>Опубликованно: {{a.time_crate|date:"d-m-Y H:i:s"}}</p>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+</div>
+
+{% endblock twt %}
+
+{% block msg %}
+    <div class="message">
+        <form action="{% url 'addpost' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+            <div class="main-signin">
+
+                <h1>Добавить Пост</h1>
+                <p class="middle__form"><input type="text" name="title"></p>
+                <p class="middle__form"><input type="text" name="text"></p>
+                <p><label>Изображение: </label> <input type="file" name="img" multiple accept="image/*,image/jpeg"></p>
+                <p class="middle__form"><input type="submit" value="Добавить"></p>
+
+            </div>
+        </form>
+    </div>
+
+{% endblock msg %}
+</body>
+</html>

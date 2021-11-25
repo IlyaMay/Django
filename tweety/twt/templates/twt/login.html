@@ -1,0 +1,21 @@
+{% extends 'twt/base.html' %}
+
+{% block twt %}
+
+<div class="tweety">
+    <div class="zagolovok"><h1>{{ title }}</h1></div>
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="main-signin">
+            {% for f in form %}
+            <p class="middle__form">{{f.label}}:{{ f }}</p>
+            {% endfor %}
+            <div class="middle__form">
+                <p><input type="submit" value="ВОЙТИ"></p>
+            </div>
+        </div>
+    </form>
+    </div>
+</div>
+{% endblock twt %}

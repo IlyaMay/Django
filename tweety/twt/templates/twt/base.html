@@ -1,0 +1,90 @@
+{% load static %}
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link type="text/css" href="{% static 'twt/css/styles.css' %}" rel="stylesheet" />
+    <style type="text/css"></style>
+</head>
+
+<body>
+{% block page %}
+
+    <div class="page">
+
+        {% block menu %}
+
+        <div class="menu">
+            <a class="logo-main" href="{% url 'home' %}"> <img src="{% static 'twt/img/logo-1.png' %}" width="145" height="70" ALT="ЛОГО"></a>
+
+            <div class="vertical-m">
+                <ul>
+                    <li> <a href="{% url 'home' %}"> <img src="https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/64/000000/external-home-ecology-icongeek26-linear-colour-icongeek26.png"/> Главная</a>
+                    </li>
+
+                    <li> <a href="{% url 'addpost' %}"> <img src="https://img.icons8.com/external-bearicons-outline-color-bearicons/64/000000/external-message-call-to-action-bearicons-outline-color-bearicons.png"/> Добавить пост </a>
+                    </li>
+
+                    <li> <a href="{% url 'info' %}"><img
+                            src="https://img.icons8.com/external-bearicons-blue-bearicons/64/000000/external-information-graphic-design-bearicons-blue-bearicons.png"/> Информация </a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+
+        {% endblock menu %}
+
+        {% block twt %}
+
+            <div class="tweety">
+                <div class="zagolovok"></div>
+                <div class="content">
+                    <div class="post">
+                        <div class="posts">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        {% endblock twt %}
+
+        {% block avtor %}
+
+        <div class="row-3">
+
+            <div class="avrotizayion">
+                {% if request.user.is_authenticated %}
+                <div class="dropdown">
+                    <div class="dropbtn"><p>{{user.username}}<p></div>
+                      <div class="dropdown-content">
+                          <a href="{% url 'logout' %}">Выйти</a>
+                      </div>
+                 </div>
+                {% else %}
+                <div class="dropdown">
+                    <div class="dropbtn"><a href="{% url 'login' %}">Войти</a></div>
+                        <div class="dropdown-content">
+                            <a href="{% url 'login' %}">Войти</a>
+                            <a href="{% url 'register' %}">Регистрация</a>
+                        </div>
+                </div>
+                {% endif %}
+            </div>
+
+        {% block msg %} {% endblock msg %}
+
+        </div>
+
+        {% endblock avtor %}
+
+    </div>
+
+{% endblock page %}
+
+</body>
+</html>
+
+

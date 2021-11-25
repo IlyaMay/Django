@@ -1,0 +1,23 @@
+{% extends 'twt/base.html' %}
+
+{% block twt %}
+
+<div class="tweety">
+    <div class="zagolovok"><h1>Просмотр записи</h1></div>
+    <div class="content">
+        <div class="post">
+            <div class="posts">
+                <H1>{{post.title}}</H1>
+                <p1>{{post.text}}</p1>
+                {% if post.img %}
+                <img src="{{post.img.url}}">
+                {% else %}
+                <p></p>
+                {% endif %}
+                <p>Опубликованно: {{post.time_crate|date:"d-m-Y H:i:s"}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock twt %}

@@ -1,0 +1,260 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Главная страница и расположение блоков */
+.page {
+      position: relative;
+      list-style: none;
+}
+
+.menu {
+    position: fixed;
+    left: 0px;
+    background: #F5F5DC;
+    width: 20%;
+    height: 100vh;
+    border-right: 1px inset #4774CC;
+}
+
+.logo-main img{
+    margin-left: 180px;
+}
+
+.tweety {
+    margin-left:20%;
+    float: left;
+    width: 50%;
+    background:#F5F5DC;
+    height:100%;
+}
+
+.row-3 {
+    right:0;
+    position:fixed;
+    background: #F5F5DC;
+    width: 30%;
+    height: 100%;
+    border-left: 1px solid #4774CC;
+}
+
+.content {
+    height:avto;
+    background:#F5F5DC;
+
+}
+
+
+
+.message {
+    list-style: none;
+    width:70%;
+    margin-top:55%;
+}
+.message p {
+    margin-left:3px;
+    font-size:18px;
+
+}
+.message h1 {
+    color:#458f6f;
+    margin-left:75px;
+}
+
+/*блок меню*/
+
+.vertical-m ul{
+    list-style: none;
+    margin: 70% 0 0 40%;
+}
+
+.vertical-m a {
+    font-size:17px;
+    color: #458f6f;
+    font-weight:bold;
+    font-family: Georgia, Arial, cursive;
+    text-decoration:none;
+    padding-left:5px;
+}
+
+
+
+/*Заголовок*/
+
+.zagolovok {
+    background: #F5F5DC;
+    width 100%;
+    height:90px;
+    border-bottom: 2px dashed #4774CC;
+    text-align: center;
+}
+
+.zagolovok h1 {
+    margin-left:-30px;
+    padding-top:25px;
+    color: #458f6f;
+    font-weight:bold;
+    font-family: Georgia, Arial, cursive;
+    Helvetica, sans-serif;
+
+}
+
+/*Авторизация*/
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    float:right;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    font-size:20px;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropbtn {
+     border-radius: 0 0 0 20px;
+     background: #7fccaa;
+     padding: 20px 25px 25px 35px;
+     text-decoration: none;
+}
+
+.dropbtn p{
+    text-decoration: none;
+    color:black;
+    font-weight:bold;
+}
+
+.dropbtn a{
+    text-decoration: none;
+    color:black;
+    font-size:17px;
+    font-family: Frosty;
+}
+
+.dropdown-content a:hover {background-color: #6ea2f0;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: #6ea2f0;}
+
+
+/*формы */
+.main-signin {
+    margin: 25% 0 0 25%;
+}
+
+.middle__form {
+    margin: 20px;
+}
+
+.middle__form input[type="text"],.middle__form input[type="password"], .middle__form input[type="submit"] {
+    background: #daf4fe;
+    border: none;
+    color: #25262a;
+    display: block;
+    outline: none;
+    padding: 12px ;
+    width:  400px;
+}
+
+.middle__form input[type="text"],  .middle__form input[type="password"] {
+    padding:15px 25px;
+    border: 1px solid #acabab;
+    border-radius: 5px 5px 5px 5px;
+    width:  400px;
+}
+
+.middle__form input[type="password"] {
+    border: 1px solid #acabab;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.middle__form input[type="submit"] {
+    background: #6ea2f0;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 15px;
+    cursor:pointer;
+}
+.middle__form input[type="submit"]:active {
+    background: #7fccaa;
+}
+
+.main-signin {
+    margin: 25% 0 0 25%;
+}
+
+.middle__form {
+    margin: 20px;
+}
+
+
+/*posts */
+
+.post {
+    width:100%;
+    height:auto;
+}
+
+.post img{
+    max-width:800px;
+    max-height:400px;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    border-radius:20px;
+    margin-left: auto;
+    margin-right:auto;
+    display: block;
+    margin-top:5px;
+}
+
+.posts {
+  display: block;
+  border-bottom: 2px dashed #4774CC;
+  text-decoration: none;
+  height:auto;
+  margin-left:9px;
+  margin-right:3px;
+}
+
+.posts H1{
+    margin-left:10%;
+    font-size:15 px;
+    color:#783c00;
+    font-weight:bold;
+    padding-top:5px;
+}
+
+.posts p{
+    margin-left:70%;
+    font-size:16px;
+    color:black;
+    font-weight:bold;
+}
+
+.posts p1{
+    margin:20px 0 0 25px;
+    font-size:23px;
+    color:black;
+}
+.posts-text {
+    border-box;
+    width:100%;
+    height:auto;
+}
