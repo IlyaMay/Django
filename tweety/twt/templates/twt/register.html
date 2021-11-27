@@ -4,17 +4,19 @@
 
 <div class="tweety">
     <div class="zagolovok"><h1>{{ title }}</h1></div>
-        <form method="post">
-        {% csrf_token %}
-        <div class="main-signin">
-            {% for f in form %}
-            <p class="middle__form">{{f.label}}:{{ f }}</p>
-            {% endfor %}
-            <div class="middle__form">
-                <p><input type="submit" value="Регистрация"></p>
-            </div>
+    <div class="content">
+        <div class="post">
+                <form method="post">
+                {% csrf_token %}
+                <div class="main-signin">
+                    {% for f in form %}
+                    <p class="middle__form">{{f.label}}:{{ f }}
+                    {% endfor %}
+                    <input type="submit" value="Регистрация"></p>
+                </div>
+                </form>
         </div>
-        </form>
+    </div>
 </div>
 
 {% endblock twt %}

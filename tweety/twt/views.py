@@ -1,8 +1,7 @@
 from django.contrib.auth import login, logout
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView
 from .forms import *
@@ -42,9 +41,10 @@ class Addpost(CreateView):
 
 
 class RegisterUser(CreateView):
-    form_class = UserCreationForm
+    form_class = RegisterUserForm
     template_name = 'twt/register.html'
-    success_url = reverse_lazy('login')
+    success_url = reverse_lazy('home')
+    success_message = 'Аккаунт успешно создан! Теперь войдите в систему, используя свои данные.'
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -75,5 +75,5 @@ def logout_user(request):
 
 
 def info(request):
-    return render(request, 'twt/info.html', {'title': 'Информация'})
+    return render(request, 'twt/info.html', {'title': 'Информация о пользователе'})
 

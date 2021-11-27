@@ -25,11 +25,10 @@
 
                     <li> <a href="{% url 'addpost' %}"> <img src="https://img.icons8.com/external-bearicons-outline-color-bearicons/64/000000/external-message-call-to-action-bearicons-outline-color-bearicons.png"/> Добавить пост </a>
                     </li>
-
-                    <li> <a href="{% url 'info' %}"><img
-                            src="https://img.icons8.com/external-bearicons-blue-bearicons/64/000000/external-information-graphic-design-bearicons-blue-bearicons.png"/> Информация </a>
+                    {% if request.user.is_authenticated %}
+                    <li > <a href="{% url 'info' %}"><img src="https://img.icons8.com/dusk/64/000000/gender-neutral-user--v1.png"/> Профиль</a>
                     </li>
-
+                    {% endif %}
 
                 </ul>
             </div>

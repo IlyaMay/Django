@@ -34,6 +34,7 @@
 
 {% block msg %}
     <div class="message">
+        {% if request.user.is_authenticated %}
         <form action="{% url 'addpost' %}" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
 
@@ -47,6 +48,7 @@
 
             </div>
         </form>
+        {% endif %}
     </div>
 
 {% endblock msg %}

@@ -1,7 +1,7 @@
-
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
+
 from .models import *
 
 
@@ -13,22 +13,18 @@ class AddPostForm(forms.ModelForm):
 
 class RegisterUserForm(UserCreationForm):
 
-    error_message = UserCreationForm.error_messages.update(
-        {
-            "duplicate_username": (
-                "This username has already been taken."
-            )
-        }
-    )
+    username = forms.CharField(label=('Ваш логин'), max_length=12,widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Логин'}))
 
-    username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Username'}))
-    password1 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'}))
-    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password Again'}))
+    first_name = forms.CharField(label=('Ваше имя'), max_length=12, min_length=3,widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Имя'}))
 
-    class Meta(UserCreationForm.Meta):
+    last_name = forms.CharField(label=('Ваша фамилия'), max_length=12, min_length=3 ,widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Фамилия'}))
+    password1 = forms.CharField(label=('Введите Пароль'), widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Пароль'}))
+    password2 = forms.CharField(label=('Повторите пароль'),widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Пароль'}))
+    email = forms.EmailField(label=('Ваш email'),widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Еmail'}))
+
+    class Meta:
         model = User
-        fields = ('username', 'password1', 'password2', )
-
+        fields = ('username', 'first_name', 'last_name', 'password1', 'password2', 'email',)
 
 
 class LoginUserForm(AuthenticationForm):

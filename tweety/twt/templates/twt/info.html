@@ -5,7 +5,16 @@
         <div class="tweety">
             <div class="zagolovok">
                 <h1>{{ title }}</h1></div>
-            <div class="content"></div>
+            <div class="post">
+                <div class="info">
+                        <p>Ваш логин:<span>{{request.user.username}}</span></p>
+                        <p> Ваше имя:<span> {{request.user.first_name}}</span></p>
+                        <p> Ваша фамилия:<span>{{request.user.last_name}}</span></p>
+                        <p> Ваш email:<span>{{request.user.email}}</span></p>
+                        <p> Ваш ID:<span>{{request.user.pk}}</span></p>
+                        <p>Ваша дата регистрации:<span>{{request.user.date_joined}}</span></p>
+                </div>
+            </div>
         </div>
 
 {% endblock twt %}
