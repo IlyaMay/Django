@@ -14,9 +14,7 @@ class AddPostForm(forms.ModelForm):
 class RegisterUserForm(UserCreationForm):
 
     username = forms.CharField(label=('Ваш логин'), max_length=12,widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Логин'}))
-
     first_name = forms.CharField(label=('Ваше имя'), max_length=12, min_length=3,widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Имя'}))
-
     last_name = forms.CharField(label=('Ваша фамилия'), max_length=12, min_length=3 ,widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Фамилия'}))
     password1 = forms.CharField(label=('Введите Пароль'), widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Пароль'}))
     password2 = forms.CharField(label=('Повторите пароль'),widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Пароль'}))

@@ -47,7 +47,6 @@
 }
 
 
-
 .message {
     list-style: none;
     width:70%;
@@ -275,3 +274,23 @@ height:100%;
     margin-left:5px;
     color:green;
 }
+
+.error {
+    margin:-110px 0 0 14%;
+    background-color:#fadadd;
+    position:fixed;
+    width:auto;
+    height:auto;
+    border: 1px solid #ef8891;
+    border-radius:15px;
+    padding: 20px; /* Поля вокруг текста */
+}
+
+.error p1{
+    color:red;
+    list-style-type: none;
+    list-style:none;
+    text-decoration:none;
+}
+
+

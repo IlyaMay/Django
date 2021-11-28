@@ -3,20 +3,31 @@
 {% block twt %}
 
 <div class="tweety">
-    <div class="zagolovok"><h1>{{ title }}</h1></div>
-    <div class="content">
-        <div class="post">
-                <form method="post">
-                {% csrf_token %}
-                <div class="main-signin">
-                    {% for f in form %}
-                    <p class="middle__form">{{f.label}}:{{ f }}
-                    {% endfor %}
-                    <input type="submit" value="Регистрация"></p>
+        <div class="zagolovok">
+            <h1>{{ title }}</h1></div>
+
+        <div class="content">
+            {% if form.errors %}
+                <div class="error">
+                    <p1>{{ form.non_field_errors }}</p1>
+                    <p1>{{ form.username.errors }}</p1>
+                    <p1>{{ form.email.errors }}</p1>
+                    <p1>{{ form.password2.errors }}</p1>
                 </div>
+            {% endif %}
+            <div class="post">
+                <form method="post" >
+                {% csrf_token %}
+                    <div class="main-signin">
+                        {% for f in form %}
+                        <p class="middle__form">
+                            {{f.label}}:{{ f }}
+                        {% endfor %}
+                        <input  type="submit" value="Регистрация"></p>
+                    </div>
                 </form>
+            </div>
         </div>
-    </div>
 </div>
 
 {% endblock twt %}
